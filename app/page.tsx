@@ -4,12 +4,13 @@ import SignOutButton from './components/SignOutButton'
 import PostsList from './components/PostsList'
 import { Database } from '@/types/supabase'
 import CreatePost from './components/CreatePost'
+import { Post } from '@/types/posts'
 
 export default async function Home() {
   const supabase = createServerComponentClient<Database>({ cookies })
   const { data: posts } = await supabase.from('posts').select('*, profiles(full_name, avatar_url, username)')
-
-
+  //typed to avoid ts erros
+  const postData = posts as Post[];
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -18,7 +19,7 @@ export default async function Home() {
         <SignOutButton />
       </div>
       <CreatePost />
-      <PostsList posts={posts} />
+      <PostsList posts={postData} />
     </main>
   )
 }
