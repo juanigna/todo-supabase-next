@@ -1,6 +1,4 @@
 "use client"
-
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import React from 'react'
 import { deletePost } from '../actions'
 

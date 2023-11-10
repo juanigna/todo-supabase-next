@@ -1,5 +1,3 @@
-import { cookies } from "next/headers"
-import { createServerActionClient, createServerComponentClient } from "@supabase/auth-helpers-nextjs"
 import AuthButton from "../components/AuthButton"
 
 

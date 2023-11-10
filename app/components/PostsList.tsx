@@ -13,7 +13,7 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
             <div className="flow-root">
                 <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
                     {
-                        posts.length > 0 ? (
+                        posts?.length > 0 ? (
 
                             posts.map(post => {
                                 return (
