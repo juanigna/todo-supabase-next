@@ -9,7 +9,7 @@ const AuthButton = () => {
         await supabase.auth.signInWithOAuth({
             provider: 'github',
             options: {
-                redirectTo: 'https://todo-supabase-next.vercel.app/auth/callback'
+                redirectTo: `${origin}/auth/callback`
             }
         })
     }
